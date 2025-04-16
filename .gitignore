@@ -8,6 +8,8 @@ default-*.json
 gen/
 node_modules/
 target/
+.vscode/
+.gitignore/
 
 # Web IDE, App Studio
 .che/

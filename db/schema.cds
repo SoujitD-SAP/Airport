@@ -1,8 +1,8 @@
  namespace com.airports;
  
  entity Airports {
-    key _key: String;
-        icao: String;
+    key icao: String;
+        _key: String ;
         iata: String;
         name: String;
         city: String;

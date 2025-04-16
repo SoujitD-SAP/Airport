@@ -14,6 +14,20 @@
     "@cap-js/cds-types": "^0.9.0"
   },
   "scripts": {
-    "start": "cds-serve"
-  }
+    "start": "cds-serve",
+    "watch-com.airports": "cds watch --open com.airports/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "airportdb.db"
+        }
+      }
+    }
+  },
+  "sapux": [
+    "app/com.airports"
+  ]
 }

@@ -27,3 +27,21 @@ GET {{host}}/Airports?$orderby=country asc
 
 ### Sort by country in descending order
 GET {{host}}/Airports?$orderby=country desc
+
+### Post a new airport
+POST {{host}}/Airports
+Content-Type: application/json
+
+{
+    "icao": "abcd",
+    "iata": "Test State",
+    "name": "Test Country",
+    "city": "Test City",
+    "state": "Test State",
+    "country": "Test Country",
+    "elevation": 0,
+    "lat": 0,
+    "lon": 0,
+    "tz": "Test Timezone"
+}
+
