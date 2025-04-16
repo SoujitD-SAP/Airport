@@ -1,0 +1,29 @@
+@host = http://localhost:4004/odata/v4/airport
+
+### GET list of all airports along with region appended 
+GET {{host}}/Airports
+
+### Sort by name in asecending order
+GET {{host}}/Airports?$orderby=name asc
+
+### Sort by name in descending order
+GET {{host}}/Airports?$orderby=name desc
+
+### Sort by city in asecending order
+GET {{host}}/Airports?$orderby=city asc
+
+### Sort by city in descending order
+GET {{host}}/Airports?$orderby=city desc
+
+
+### Sort by state in asecending order
+GET {{host}}/Airports?$orderby=state asc
+
+### Sort by state in descending order
+GET {{host}}/Airports?$orderby=state desc
+
+### Sort by country in asecending order
+GET {{host}}/Airports?$orderby=country asc
+
+### Sort by country in descending order
+GET {{host}}/Airports?$orderby=country desc
