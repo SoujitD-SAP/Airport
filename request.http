@@ -33,7 +33,7 @@ POST {{host}}/Airports
 Content-Type: application/json
 
 {
-    "icao": "abcd",
+    "icao": "abcde",
     "iata": "Test State",
     "name": "Test Country",
     "city": "Test City",
@@ -44,4 +44,17 @@ Content-Type: application/json
     "lon": 0,
     "tz": "Test Timezone"
 }
+
+### Check avge elevation of all airports grouped by country using $apply
+GET {{host}}/Airports?$apply=groupby((country), aggregate(elevation with average as avgElevation))&$orderby=avgElevation desc
+
+### Check avge elevation of all airports grouped by state using function
+GET {{host}}/getAverageElevationByCountry()
+
+### Find airports without IATA code
+GET {{host}}/Airports?$filter=iata eq null
+
+### Determine 10 most common timezones
+GET {{host}}/Airports?$apply=groupby((tz), aggregate($count as count))&$orderby=count desc&$top=10
+
 

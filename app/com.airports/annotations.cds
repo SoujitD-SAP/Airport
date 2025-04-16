@@ -1,4 +1,7 @@
 using AirportService as service from '../../srv/service';
+
+
+
 annotate service.Airports with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
@@ -73,6 +76,15 @@ annotate service.Airports with @(
             $Type : 'UI.DataField',
             Label : 'icao',
             Value : icao,
+            Criticality : {$edmJson: {$If: [
+        {$Gt: [
+            {$Path: 'elevation'},
+            8000
+        ]},
+        3,
+        0
+
+    ]}}
         },
         {
             $Type : 'UI.DataField',
@@ -94,6 +106,14 @@ annotate service.Airports with @(
             Label : 'state',
             Value : state,
         },
+         {
+            $Type : 'UI.DataField',
+            Label : 'elevation',
+            Value : elevation,
+            
+        },
     ],
 );
+
+
 
