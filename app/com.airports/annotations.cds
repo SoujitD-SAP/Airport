@@ -8,37 +8,37 @@ annotate service.Airports with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'icao',
+                Label : 'ICAO',
                 Value : icao,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'iata',
+                Label : 'IATA',
                 Value : iata,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'name',
+                Label : 'Name',
                 Value : name,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'city',
+                Label : 'City',
                 Value : city,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'state',
+                Label : 'State',
                 Value : state,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'country',
+                Label : 'Country',
                 Value : country,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'elevation',
+                Label : 'Elevation',
                 Value : elevation,
             },
             {
@@ -58,7 +58,7 @@ annotate service.Airports with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'region',
+                Label : 'Region',
                 Value : region,
             },
         ],
@@ -67,14 +67,14 @@ annotate service.Airports with @(
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GeneratedFacet1',
-            Label : 'General Information',
+            Label : 'Airport Information',
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
     ],
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'icao',
+            Label : 'ICAO',
             Value : icao,
             Criticality : {$edmJson: {$If: [
         {$Gt: [
@@ -84,36 +84,53 @@ annotate service.Airports with @(
         3,
         0
 
-    ]}}
+    ]}},
         },
         {
             $Type : 'UI.DataField',
-            Label : 'iata',
-            Value : iata,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'name',
+            Label : 'Name',
             Value : name,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'city',
+            Label : 'City',
             Value : city,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'state',
+            Label : 'State',
             Value : state,
         },
          {
             $Type : 'UI.DataField',
-            Label : 'elevation',
+            Label : 'Elevation',
             Value : elevation,
             
         },
     ],
+    UI.SelectionFields : [
+        name,
+        elevation,
+    ],
+    UI.HeaderInfo : {
+        ImageUrl : city,
+        TypeName : '',
+        TypeNamePlural : '',
+        TypeImageUrl : 'sap-icon://flight',
+    },
 );
 
 
+
+annotate service.Airports with {
+    name @Common.Label : 'Name'
+};
+
+annotate service.Airports with {
+    elevation @Common.Label : 'Elevation'
+};
+
+annotate service.Airports with {
+    icao @Common.FieldControl : #Mandatory
+};
 

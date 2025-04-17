@@ -1,4 +1,4 @@
- namespace com.airports;
+namespace com.airports;
  
  entity Airports {
     key icao: String;
@@ -7,10 +7,10 @@
         name: String;
         city: String;
         state: String;
-        country: String;
+        country: String(2);
         elevation: Integer;
-        lat: Decimal(10, 6);
-        lon: Decimal(10, 6);
+        lat: Decimal(13, 10);
+        lon: Decimal(13, 10);
         tz: String;
 
   }
