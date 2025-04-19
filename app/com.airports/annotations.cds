@@ -107,6 +107,36 @@ annotate service.Airports with @(
             Value : elevation,
             
         },
+        {
+            $Type : 'UI.DataField',
+            Value : region,
+            Label : 'Region',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : country,
+            Label : 'Country',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : iata,
+            Label : 'IATA',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : lat,
+            Label : 'lat',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : lon,
+            Label : 'lon',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : tz,
+            Label : 'tz',
+        },
     ],
     UI.SelectionFields : [
         name,
@@ -114,8 +144,8 @@ annotate service.Airports with @(
     ],
     UI.HeaderInfo : {
         ImageUrl : city,
-        TypeName : '',
-        TypeNamePlural : '',
+        TypeName : 'Airport',
+        TypeNamePlural : 'Airports',
         TypeImageUrl : 'sap-icon://flight',
     },
 );

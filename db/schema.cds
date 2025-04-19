@@ -1,9 +1,10 @@
 namespace com.airports;
  
  entity Airports {
-    key icao: String;
+    
+    key icao: String(4);
         _key: String ;
-        iata: String;
+        iata: String(3);
         name: String @mandatory;
         city: String;
         state: String;
