@@ -12,6 +12,29 @@ File or Folder | Purpose
 `package.json` | project metadata and configuration
 `readme.md` | getting started guide
 
+## Prerequisites
+1. **@sap/cds** (CAP CLI)  
+   - Required to develop and run CAP applications.
+   - Install globally using:
+     ```sh
+     npm install -g @sap/cds
+     ```
+   - Verify installation:
+     ```sh
+     cds -v
+     ```
+2. **Node.js** (version 16 or higher)  
+   - Required to run the CAP project.
+   - Download and install from [Node.js official website](https://nodejs.org/).
+   - Verify installation:
+     ```sh
+     node -v
+     ```
+3. **SAP Fiori Tools**
+    - Install the **SAP Fiori Tools - Extension Pack** from IDE Extensions
+4. **SQLite** (for local database persistence)  
+   - Used as the database for development.
+
 ## Setup
 
 Clone the repository and install dependencies:
@@ -41,7 +64,7 @@ cds watch
 
 ## Test
 
-Run enclosed tests with:
+Run enclosed unit tests with:
 
 ```sh
 npm test

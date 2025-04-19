@@ -10,6 +10,7 @@ node_modules/
 target/
 .vscode/
 .gitignore/
+coverage/
 
 # Web IDE, App Studio
 .che/
