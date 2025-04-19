@@ -18,7 +18,11 @@
   "scripts": {
     "start": "cds-serve",
     "watch-com.airports": "cds watch --open com.airports/webapp/index.html?sap-ui-xx-viewCache=false",
-    "test": "npx jest"
+    "test": "npx jest",
+    "avgElevation": "node srv/scripts/avgElevation.js",
+    "commonTz": "node srv/scripts/commonTz.js",
+    "nullIATA": "node srv/scripts/nullIATA.js",
+    "scripts": "npm run avgElevation && npm run nullIATA && npm run commonTz "
   },
   "cds": {
     "requires": {

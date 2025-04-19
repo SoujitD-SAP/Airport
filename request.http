@@ -52,7 +52,7 @@ Content-Type: application/json
 //Scripts
 
 ### Check avge elevation of all airports grouped by country using $apply
-GET {{host}}/Airports?$apply=groupby((country), aggregate(elevation with average as avgElevation))&$orderby=country asc
+GET {{host}}/Airports?$apply=groupby((country), aggregate(elevation with average as avgElevation))&$orderby=avgElevation desc
 
 ### Find airports without IATA code
 GET {{host}}/Airports?$filter=iata eq null

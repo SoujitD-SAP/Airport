@@ -67,12 +67,33 @@ or
 npm start
 ```
 
-
-
 ## Test
 
 Run enclosed unit tests with:
 
 ```sh
 npm test
+```
+## Scripts (for terminal)
+
+1. Calculate Average Elevation per Country.
+
+```sh
+npm run avgElevation
+```
+
+2. Find Airports Without IATA Codes.
+
+```sh
+npm run nullIATA
+```
+
+3. Determine the 10 Most Common Time zones.
+
+```sh
+npm run commonTz
+```
+- **Note** : Ensure that sure the server is running and up in other terminal and to run all scripts together use 
+```sh 
+npm run scripts
 ```
