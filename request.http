@@ -41,7 +41,7 @@ Content-Type: application/json
     "name": "Test Country",
     "city": "Test City",
     "state": "Test State",
-    "country": "Test Country",
+    "country": "TC",
     "elevation": 0,
     "lat": 0,
     "lon": 0,

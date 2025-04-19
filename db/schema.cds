@@ -4,13 +4,13 @@ namespace com.airports;
     key icao: String;
         _key: String ;
         iata: String;
-        name: String;
+        name: String @mandatory;
         city: String;
         state: String;
-        country: String(2);
-        elevation: Integer;
-        lat: Decimal(13, 10);
-        lon: Decimal(13, 10);
-        tz: String;
+        country: String(2) @mandatory;
+        elevation: Integer @mandatory;
+        lat: Decimal(13, 10) @mandatory;
+        lon: Decimal(13, 10) @mandatory;
+        tz: String @mandatory;
 
   }
