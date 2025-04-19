@@ -61,6 +61,13 @@ Run the application locally:
 ```sh
 cds watch
 ```
+or
+
+```sh
+npm start
+```
+
+
 
 ## Test
 

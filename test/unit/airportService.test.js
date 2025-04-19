@@ -9,6 +9,9 @@ describe('AirportService Unit Tests', () => {
     // Initialize the service for testing
     service = new AirportService();
   });
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
 
   describe('addKey()', () => {
     it('should set _key from icao if icao is provided', () => {

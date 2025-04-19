@@ -11,6 +11,9 @@ target/
 .vscode/
 .gitignore/
 coverage/
+*.db-shm
+*.db-wal
+
 
 # Web IDE, App Studio
 .che/
