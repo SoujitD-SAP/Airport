@@ -1,7 +1,9 @@
 # Getting Started
 
-Welcome to the Airport project.
+Welcome to the Airport project, this is the deployment branch which consist of build configuration for deployment in CF.
 
+## Documentation for deployment
+- [CAP Deployment Guide](https://cap.cloud.sap/docs/guides/deployment/to-cf)
 It contains these folders and files, following CAP recommended project layout:
 
 File or Folder | Purpose
