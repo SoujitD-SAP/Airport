@@ -40,7 +40,13 @@ describe('AirportService Unit Tests', () => {
     it('should throw an error if icao is not 4 characters', () => {
       const req = { data: { icao: 'abc' }, error: jest.fn() };
       service.validateICAO(req);
-      expect(req.error).toHaveBeenCalledWith(400, 'ICAO code must be a four-letter code');
+      expect(req.error).toHaveBeenCalledWith(400, 'ICAO code must be a valid four-character alphanumeric code.');
+    });
+
+    it('should throw an error if icao contains special characters', () => {
+      const req = { data: { icao: 'a@bc' }, error: jest.fn() };
+      service.validateICAO(req);
+      expect(req.error).toHaveBeenCalledWith(400, 'ICAO code must be a valid four-character alphanumeric code.');
     });
 
     it('should throw an error if icao is missing', () => {
@@ -61,7 +67,13 @@ describe('AirportService Unit Tests', () => {
     it('should throw an error if iata is not 3 characters', () => {
       const req = { data: { iata: 'ab' }, error: jest.fn() };
       service.validateIATA(req);
-      expect(req.error).toHaveBeenCalledWith(400, 'IATA code must be a three-letter code');
+      expect(req.error).toHaveBeenCalledWith(400, 'IATA code must be a valid three-character alphanumeric code.');
+    });
+
+    it('should throw an error if iata contains special characters', () => {
+      const req = { data: { iata: 'a@b' }, error: jest.fn() };
+      service.validateIATA(req);
+      expect(req.error).toHaveBeenCalledWith(400, 'IATA code must be a valid three-character alphanumeric code.');
     });
 
     it('should not throw an error if iata is missing', () => {
@@ -80,6 +92,12 @@ describe('AirportService Unit Tests', () => {
 
     it('should throw an error if country code is not two letters', () => {
       const req = { data: { country: 'USA' }, error: jest.fn() };
+      service.validateCountryCode(req);
+      expect(req.error).toHaveBeenCalledWith(400, 'Country code must be exactly 2 letters (ISO 3166-1 alpha-2 code).');
+    });
+
+    it('should throw an error if country code contains special characters', () => {
+      const req = { data: { country: 'U@' }, error: jest.fn() };
       service.validateCountryCode(req);
       expect(req.error).toHaveBeenCalledWith(400, 'Country code must be exactly 2 letters (ISO 3166-1 alpha-2 code).');
     });
