@@ -38,7 +38,7 @@ annotate service.Airports with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Elevation',
+                Label : 'Elevation(ft)',
                 Value : elevation,
             },
             {
@@ -103,7 +103,7 @@ annotate service.Airports with @(
         },
          {
             $Type : 'UI.DataField',
-            Label : 'Elevation',
+            Label : 'Elevation(ft)',
             Value : elevation,
             
         },
