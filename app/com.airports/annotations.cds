@@ -33,7 +33,7 @@ annotate service.Airports with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Country (Two letter ISO Code in upper case)',
+                Label : 'Country (2-letter ISO Code)',
                 Value : country,
             },
             {
