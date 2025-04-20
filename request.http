@@ -31,21 +31,22 @@ GET {{host}}/Airports?$orderby=country desc
 ### Sort by elevation in descending order
 GET {{host}}/Airports?$orderby=elevation desc
 
-### Post a new airport
+### Post a new airport directly to the database as active entity bypassing the draft state
 POST {{host}}/Airports
 Content-Type: application/json
 
 {
-    "icao": "abcde",
-    "iata": "Test State",
+    "icao": "ANDC",
+    "iata": "TSC",
     "name": "Test Country",
     "city": "Test City",
     "state": "Test State",
-    "country": "Test Country",
+    "country": "TC",
     "elevation": 0,
     "lat": 0,
     "lon": 0,
-    "tz": "Test Timezone"
+    "tz": "Test Timezone",
+    "IsActiveEntity": true
 }
 
 //Scripts

@@ -1,8 +1,8 @@
 # Getting Started
 
-Welcome to your new project.
+Welcome to the Airport project.
 
-It contains these folders and files, following our recommended project layout:
+It contains these folders and files, following CAP recommended project layout:
 
 File or Folder | Purpose
 ---------|----------
@@ -11,6 +11,29 @@ File or Folder | Purpose
 `srv/` | service models and code go here
 `package.json` | project metadata and configuration
 `readme.md` | getting started guide
+
+## Prerequisites
+1. **@sap/cds** (CAP CLI)  
+   - Required to develop and run CAP applications.
+   - Install globally using:
+     ```sh
+     npm install -g @sap/cds
+     ```
+   - Verify installation:
+     ```sh
+     cds -v
+     ```
+2. **Node.js** (version 16 or higher)  
+   - Required to run the CAP project.
+   - Download and install from [Node.js official website](https://nodejs.org/).
+   - Verify installation:
+     ```sh
+     node -v
+     ```
+3. **SAP Fiori Tools**
+    - Install the **SAP Fiori Tools - Extension Pack** from IDE Extensions
+4. **SQLite** (for local database persistence)  
+   - Used as the database for development.
 
 ## Setup
 
@@ -38,11 +61,39 @@ Run the application locally:
 ```sh
 cds watch
 ```
+or
+
+```sh
+npm start
+```
 
 ## Test
 
-Run enclosed tests with:
+Run enclosed unit tests with:
 
 ```sh
 npm test
+```
+## Scripts (for terminal)
+
+1. Calculate Average Elevation per Country.
+
+```sh
+npm run avgElevation
+```
+
+2. Find Airports Without IATA Codes.
+
+```sh
+npm run nullIATA
+```
+
+3. Determine the 10 Most Common Time zones.
+
+```sh
+npm run commonTz
+```
+- **Note** : Ensure that sure the server is running and up in other terminal and to run all scripts together use 
+```sh 
+npm run scripts
 ```

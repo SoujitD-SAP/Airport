@@ -11,21 +11,36 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "@cap-js/cds-types": "^0.9.0"
+    "@cap-js/cds-types": "^0.9.0",
+    "@cap-js/cds-test": "^0",
+    "jest": "^29.5.0"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-com.airports": "cds watch --open com.airports/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-com.airports": "cds watch --open com.airports/webapp/index.html?sap-ui-xx-viewCache=false",
+    "test": "npx jest",
+    "avgElevation": "node srv/scripts/avgElevation.js",
+    "commonTz": "node srv/scripts/commonTz.js",
+    "nullIATA": "node srv/scripts/nullIATA.js",
+    "scripts": "npm run avgElevation && npm run nullIATA && npm run commonTz "
   },
   "cds": {
     "requires": {
       "db": {
+      "[development]": {
         "kind": "sqlite",
         "credentials": {
           "url": "airportdb.db"
         }
-      }
+      },
+      "[production]": {
+        "kind": "hana"
+      },
+      "[test]": {
+          "kind": "sqlite"
+        }
     }
+  }
   },
   "sapux": [
     "app/com.airports"
