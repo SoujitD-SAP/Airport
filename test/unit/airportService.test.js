@@ -9,6 +9,7 @@ describe('AirportService Unit Tests', () => {
     // Initialize the service for testing
     service = new AirportService();
   });
+
   afterAll(() => {
     jest.restoreAllMocks();
   });
@@ -45,7 +46,28 @@ describe('AirportService Unit Tests', () => {
     it('should throw an error if icao is missing', () => {
       const req = { data: {}, error: jest.fn() };
       service.validateICAO(req);
-      expect(req.error).toHaveBeenCalledWith(400, 'ICAO code must be a four-letter code');
+      expect(req.error).toHaveBeenCalledWith(400, 'ICAO code is required');
+    });
+  });
+
+  describe('validateIATA()', () => {
+    it('should capitalize iata and validate its length', () => {
+      const req = { data: { iata: 'abc' }, error: jest.fn() };
+      service.validateIATA(req);
+      expect(req.data.iata).toBe('ABC');
+      expect(req.error).not.toHaveBeenCalled();
+    });
+
+    it('should throw an error if iata is not 3 characters', () => {
+      const req = { data: { iata: 'ab' }, error: jest.fn() };
+      service.validateIATA(req);
+      expect(req.error).toHaveBeenCalledWith(400, 'IATA code must be a three-letter code');
+    });
+
+    it('should not throw an error if iata is missing', () => {
+      const req = { data: {}, error: jest.fn() };
+      service.validateIATA(req);
+      expect(req.error).not.toHaveBeenCalled();
     });
   });
 
@@ -59,19 +81,13 @@ describe('AirportService Unit Tests', () => {
     it('should throw an error if country code is not two letters', () => {
       const req = { data: { country: 'USA' }, error: jest.fn() };
       service.validateCountryCode(req);
-      expect(req.error).toHaveBeenCalledWith(400, 'Country code must be two-letter ISO country code');
+      expect(req.error).toHaveBeenCalledWith(400, 'Country code must be exactly 2 letters (ISO 3166-1 alpha-2 code).');
     });
 
-    it('should throw an error if country code is not uppercase', () => {
-      const req = { data: { country: 'us' }, error: jest.fn() };
-      service.validateCountryCode(req);
-      expect(req.error).toHaveBeenCalledWith(400, 'Country code must be two-letter ISO country code');
-    });
-
-    it('should throw an error if country code is missing', () => {
+    it('should not throw an error if country code is missing', () => {
       const req = { data: {}, error: jest.fn() };
       service.validateCountryCode(req);
-      expect(req.error).toHaveBeenCalledWith(400, 'Country code must be two-letter ISO country code');
+      expect(req.error).not.toHaveBeenCalled();
     });
   });
 });
