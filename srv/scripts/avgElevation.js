@@ -14,6 +14,7 @@ async function avgElevation() {
             .groupBy('country')
             .orderBy({ ref: ['average_elevation'], sort: 'desc' })
         );
+
         console.log('\nAverage Elevation(ft) by Country:\n');
         console.table(avgElevation);
     
