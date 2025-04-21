@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to the Airport project.
+Welcome to the Airport project, this is the deployment branch which consist of build configuration for deployment in CF.
 
 It contains these folders and files, following CAP recommended project layout:
 
@@ -11,6 +11,10 @@ File or Folder | Purpose
 `srv/` | service models and code go here
 `package.json` | project metadata and configuration
 `readme.md` | getting started guide
+`mta.yaml` | build configuration for deployment
+
+## Documentation for deployment
+- [CAP Deployment Guide](https://cap.cloud.sap/docs/guides/deployment/to-cf)
 
 ## Prerequisites
 1. **@sap/cds** (CAP CLI)  

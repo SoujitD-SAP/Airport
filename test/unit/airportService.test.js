@@ -67,6 +67,7 @@ describe('AirportService Unit Tests', () => {
     it('should throw an error if iata is not 3 characters', () => {
       const req = { data: { iata: 'ab' }, error: jest.fn() };
       service.validateIATA(req);
+
       expect(req.error).toHaveBeenCalledWith(400, 'IATA code must be a valid three-character alphanumeric code.');
     });
 
@@ -74,6 +75,7 @@ describe('AirportService Unit Tests', () => {
       const req = { data: { iata: 'a@b' }, error: jest.fn() };
       service.validateIATA(req);
       expect(req.error).toHaveBeenCalledWith(400, 'IATA code must be a valid three-character alphanumeric code.');
+
     });
 
     it('should not throw an error if iata is missing', () => {
@@ -96,11 +98,13 @@ describe('AirportService Unit Tests', () => {
       expect(req.error).toHaveBeenCalledWith(400, 'Country code must be exactly 2 letters (ISO 3166-1 alpha-2 code).');
     });
 
+
     it('should throw an error if country code contains special characters', () => {
       const req = { data: { country: 'U@' }, error: jest.fn() };
       service.validateCountryCode(req);
       expect(req.error).toHaveBeenCalledWith(400, 'Country code must be exactly 2 letters (ISO 3166-1 alpha-2 code).');
     });
+
 
     it('should not throw an error if country code is missing', () => {
       const req = { data: {}, error: jest.fn() };
